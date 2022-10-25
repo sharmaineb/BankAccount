@@ -17,3 +17,8 @@ class BankAccount:
 
     def get_balance():
         print("Here is your current account balance:")
+
+    def add_interest(self):
+        self.balance = self.balance * 0.00083 # add interest to the users balance
+
+    def print_statement(self): # prints a message with the account name, account number, and balance
