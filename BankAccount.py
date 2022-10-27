@@ -1,8 +1,9 @@
 class BankAccount:
-    def __init__(self, full_name, account_number, balance = 0): # balance starting at 0
+    def __init__(self, full_name, account_number, type_of_account, balance = 0,): # balance starting at 0
         self.name = full_name
         self.account = account_number
         self.balance = balance
+        self.account_type = type_of_account
         
     def deposit(self, amount):
         self.balance = self.balance + amount # add amount to the balance
@@ -24,7 +25,12 @@ class BankAccount:
         return self.balance
 
     def add_interest(self):
-        self.balance = self.balance * 0.00083 # add interest to the users balance
+        if self.account_type == "checking":
+            interest = self.balance * 0.00083 # add interest to the users balance
+            self.balance = self.balance + interest
+        else:
+            interest = self.balance * 0.01 # a savings account get 1.2% interest (that's 1% per month)
+            self.balance = self.balance + interest
 
     def print_statement(self): # prints a message with the account name, account number, and balance
         print()
@@ -33,6 +39,29 @@ class BankAccount:
         print(  "Balance:", self.balance)
 
 # outside of the BankAccount class, define 3 different bank account examples using the BankAccount() object.
+shar = BankAccount("Shar", "67982312", "checking")
+shar.deposit(7000)
+shar.print_statement()
+shar.withdraw(550)
+shar.print_statement()
+shar.add_interest()
+shar.print_statement()
+
+ian = BankAccount("Ian", "112163201", "savings")
+ian.deposit(10000)
+ian.print_statement()
+ian.withdraw(1000)
+ian.add_interest()
+ian.print_statement()
+
+kae = BankAccount("Kaeleen", "671507134", "checking")
+kae.deposit(12000)
+kae.print_statement()
+kae.add_interest()
+kae.withdraw(100)
+kae.print_statement()
+
+# example code
 mitchell = BankAccount("Mitchell", "3141592")
 mitchell.deposit(400000)
 mitchell.print_statement()
