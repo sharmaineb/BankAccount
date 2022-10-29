@@ -40,7 +40,7 @@ class BankAccount:
         print(  "Account No.:", self.account ) # account number
         print(  "Balance:", self.balance) # balance
 
-    def new_account(self):
+    def new_account(self): # create a new account
         new_account = {"Name:", self.name, "Balance:", self.balance, "Account Number:", self.account, "Type:", self.account_type}
         accounts_list.append(new_account)
 
