@@ -1,5 +1,3 @@
-accounts_list = []
-
 class BankAccount:
     def __init__(self, full_name, account_number, type_of_account, balance = 0,): # balance set at 0
         self.name = full_name
@@ -40,9 +38,10 @@ class BankAccount:
         print(  "Account No.:", self.account ) # account number
         print(  "Balance:", self.balance) # balance
 
-    def new_account(self): # create a new account
-        new_account = {"Name:", self.name, "Balance:", self.balance, "Account Number:", self.account, "Type:", self.account_type}
-        accounts_list.append(new_account)
+accounts_list = []
+def new_account(self): # create a new account
+    new_account = {"Name:", self.name, "Balance:", self.balance, "Account Number:", self.account, "Type:", self.account_type}
+    accounts_list.append(new_account)
 
 # outside of the BankAccount class, define 3 different bank account examples using the BankAccount() object.
 shar = BankAccount("Shar", "67982312", "checking")
