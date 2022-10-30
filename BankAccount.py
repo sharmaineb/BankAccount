@@ -33,10 +33,12 @@ class BankAccount:
             self.balance = self.balance + interest
 
     def print_statement(self): # prints a message with the account name, account number, and balance
+        hide_account = (len(self.account) - 4) * "*" # hide the first four numbers of the user's account for privacy
+        user_account = self.account[-4:] # only displaying the last four numbers of user's account
         print()
-        print(  "Name:", self.name) # name
-        print(  "Account No.:", self.account ) # account number
-        print(  "Balance:", self.balance) # balance
+        print(  f"Name:", self.name) # name
+        print(  f"Account No.:", hide_account,user_account) # user's account number only displaying the last four numbers
+        print(  f"Balance:", self.balance) # balance
 
 # accounts_list = []
 # def new_account(self): # create a new account
@@ -52,7 +54,7 @@ shar.print_statement()
 shar.add_interest()
 shar.print_statement()
 
-ian = BankAccount("Ian", "112163201", "savings")
+ian = BankAccount("Ian", "11216321", "savings")
 ian.deposit(10000)
 ian.print_statement()
 ian.withdraw(1000)
@@ -60,7 +62,7 @@ ian.print_statement()
 ian.add_interest()
 ian.print_statement()
 
-kae = BankAccount("Kaeleen", "671507134", "checking")
+kae = BankAccount("Kaeleen", "67150713", "checking")
 kae.deposit(12000)
 kae.print_statement()
 kae.add_interest()
