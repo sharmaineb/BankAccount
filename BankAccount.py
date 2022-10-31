@@ -1,16 +1,16 @@
 class BankAccount:
-    def __init__(self, full_name, account_number, type_of_account, balance = 0,): # balance set at 0
+    def __init__(self, full_name, account_number, type_of_account, balance = 0): # balance set at 0
         self.name = full_name
         self.account = account_number
         self.balance = balance
         self.account_type = type_of_account
         
-    def deposit(self, amount):
+    def deposit(self, amount): # deposit
         self.balance = self.balance + amount # add amount to the balance
         print()
         print(f"Amount Deposited: ${amount} New Balance: ${self.balance}") 
 
-    def withdraw(self, amount):
+    def withdraw(self, amount): # withdraw
         self.balance = self.balance - amount # subtract balance from account
         print(f"Amount Withdrawn: ${amount} New Balance: ${self.balance}") 
         if amount > self.balance:
@@ -20,7 +20,7 @@ class BankAccount:
         else:
             return self.balance
 
-    def get_balance(self):
+    def get_balance(self): # balance
         print("Here is your current account balance:")
         return self.balance
 
@@ -36,9 +36,9 @@ class BankAccount:
         hide_account = (len(self.account) - 4) * "*" # hide the first four numbers of the user's account for privacy
         user_account = self.account[-4:] # only displaying the last four numbers of user's account
         print()
-        print(  f"Name:", self.name) # name
-        print(  f"Account No.:", hide_account,user_account) # user's account number only displaying the last four numbers
-        print(  f"Balance:", self.balance) # balance
+        print(f"Name:", self.name) # name
+        print(f"Account No.:", hide_account,user_account) # user's account number only displaying the last four numbers
+        print(f"Balance:", self.balance) # balance
 
 # accounts_list = []
 # def new_account(self): # create a new account
